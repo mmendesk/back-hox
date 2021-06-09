@@ -30,7 +30,7 @@ export const createValidator = (data: any) => {
         }
         return true;
       }),
-    price: Yup.string().required("Preço é obrigatório"),
+    price: Yup.number().required("Preço é obrigatório"),
     expirationDate: Yup.string().required("Data é obrigatório"),
     manufacturingDate: Yup.string().required("Data é obrigatório"),
     perishableProduct: Yup.boolean().required("Deve ser enviado"),
