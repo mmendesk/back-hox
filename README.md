@@ -1,25 +1,42 @@
-# Aladin project is the best intelligence layer before WPP
+# Lulamolusco-API
 
-**How to up - API**
+**Pré-requisito**  
+Yarn  
+Docker  
+MongoDB
 
-1 - Open api folder in terminal
+**Início**  
+Para iniciar o desenvolvimento, é necessário clonar o projeto do GitHub num diretório de sua preferência:
 
-2 - Rename .env.example to .env
+`cd "diretório da sua preferencia"`  
+`git clone git@github.com:pessoalize/back-hox.git`
 
-2 - Run a yarn
+**Instalando Dependências**  
+Para instalar as dependências do projeto, executar os comando abaixo:
 
-3 - Run command `make up-and-log`
+`yarn` ou `yarn install`
 
-**How to up - Admin**
+O comando irá baixar todas as dependências do projeto e criar um diretório com os artefatos construídos, que incluem o arquivo node_modules do projeto.
 
-1 - Open admin folder in terminal
+**Rodando o Projeto**  
+Para executar o projeto, é necessário ter instalado o `make`. Contendo todas as instalações obrigatórias, podemos executar o seguinte comando:
 
-2 - Run a yarn
+`make up-and-log`
 
-3 - Run a yarn start
+O que irá subir o nosso docker juntamente com o mongo e nos apresentara o console caso algum erro aconteça na nossa API.  
+Podemos também, rodar apenas o comando sem os logs:
 
-**For make a api requests install below plugin**
+`make up`
 
-https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+**ENDPOINT**
 
-Api files is in restManagement folder
+**Users**  
+`http://localhost:3000/users`
+
+Examples Insomnia:  
+`{`  
+ `"name": "Teste",`  
+ `"email": "mmendesca@icloud.com",`  
+ `"password": "123",`  
+ `"active": true`  
+`}`
