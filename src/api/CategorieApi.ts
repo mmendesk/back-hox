@@ -9,10 +9,14 @@ export default class CategorieApi {
   private authService = new AuthenticationService();
   constructor() {
     this.router = Router();
-    this.router.post("/categorie", this.createCategorie);
+    this.router.post("/categorie", authUserMiddleware, this.createCategorie);
     this.router.get("/categories", authUserMiddleware, this.getAll);
-    this.router.get("/categorie/:id", this.getCategorieId);
-    this.router.put("/categorie-update/:id", this.updateCategorie);
+    this.router.get("/categorie/:id", authUserMiddleware, this.getCategorieId);
+    this.router.put(
+      "/categorie-update/:id",
+      authUserMiddleware,
+      this.updateCategorie
+    );
   }
 
   private createCategorie = async (

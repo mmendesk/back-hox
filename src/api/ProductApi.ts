@@ -12,8 +12,12 @@ export default class ProductApi {
     this.router = Router();
     this.router.post("/product", authUserMiddleware, this.createProduct);
     this.router.get("/products", authUserMiddleware, this.getAll);
-    this.router.get("/product/:id", this.getProductId);
-    this.router.put("/product-update/:id", this.updateProduct);
+    this.router.get("/product/:id", authUserMiddleware, this.getProductId);
+    this.router.put(
+      "/product-update/:id",
+      authUserMiddleware,
+      this.updateProduct
+    );
   }
 
   private createProduct = async (
